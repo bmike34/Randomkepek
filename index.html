@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiányzunk? 😄</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      text-align: center;
+      padding: 40px;
+    }
+    img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hiányzunk? 😄</h1>
+  <img id="randomImage" src="" alt="Kép töltődik..." />
+  <br>
+  <button onclick="showRandomImage()">Mutass másikat</button>
+
+  <script>
+    const imageUrls = [
+      "https://i.imgur.com/6Lgyt3g.jpg",
+      "https://i.imgur.com/jFFcm6M.jpg",
+      "https://i.imgur.com/Hc2AI1H.jpg",
+      "https://i.imgur.com/Z57pMCz.jpg",
+      "https://i.imgur.com/kMEldu4.jpg"
+    ];
+
+    function showRandomImage() {
+      const img = document.getElementById("randomImage");
+      const index = Math.floor(Math.random() * imageUrls.length);
+      img.src = imageUrls[index];
+    }
+
+    // első betöltéskor is jelenjen meg kép
+    showRandomImage();
+  </script>
+</body>
+</html>
