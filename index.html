@@ -1,68 +1,26 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>🎁 Véletlen kép</title>
+  <meta charset="UTF-8" />
+  <title>Véletlen Kép</title>
   <style>
     body {
       font-family: sans-serif;
-      background-color: #fafafa;
       text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    #loading {
-      font-size: 1.2em;
-      color: #888;
+      margin-top: 50px;
     }
     img {
       max-width: 90%;
-      border-radius: 16px;
-      margin-top: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <h1>📸 Egy véletlen kép neked</h1>
-  <div id="loading">Betöltés...</div>
-  <img id="randomImage" src="" alt="Véletlen kép" style="display:none;" />
-
-  <script>
-    const folderId = "1BoqpgLVvWW0T1n4CZ11JcK4ABQKB7eVR";
-    const apiKey = "AIzaSyBjRektb6rKE1hjaAleN03217YVU3RjViQ";
-
-    fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+(mimeType='image/jpeg'+or+mimeType='image/png')&key=${apiKey}`)
-  .then(response => {
-    console.log("Fetch response status:", response.status);  // <- ez kiírja, hogy sikerült-e a kérés
-    return response.json();
-  })
-  .then(data => {
-    console.log("API válasz:", data);  // <- ez kiírja, hogy mit kaptunk vissza
-    console.log("Első fájl MIME-típusa:", data.files[0]?.mimeType);
-    console.log("Első fájl neve:", data.files[0]?.name);
-    const files = data.files;
-        if (!files || files.length === 0) {
-          document.getElementById("loading").textContent = "Nincsenek kompatibilis képek ebben a mappában.";
-          return;
-        }
-        const randomFile = files[Math.floor(Math.random() * files.length)];
-        const fileId = randomFile.id;
-        const imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
-
-        const img = document.getElementById("randomImage");
-        img.src = imageUrl;
-        img.onload = () => {
-          img.style.display = "block";
-          document.getElementById("loading").style.display = "none";
-        };
-      })
-      .catch(error => {
-        console.error("Hiba történt:", error);
-        document.getElementById("loading").textContent = "Nem sikerült betölteni a képet 😢";
-      });
-  </script>
+  <h1>🎁 Egy véletlen kép neked!</h1>
+  <img id="randomImage" src="" alt="Véletlen kép" />
+  
+  <script src="script.js"></script>
 </body>
 </html>
