@@ -6,31 +6,22 @@
   <title>Baráti meglepetés</title>
   <style>
     body {
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: #111;
+      background-color: #111;
     }
     img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
     }
   </style>
 </head>
 <body>
-  <img id="randomImage" src="" alt="meglepi kép" />
-  <script>
-    const imageUrls = [
-      "https://drive.google.com/uc?id=15L4OBaSW03Nx2ipPBVGoUbtuVNT_A02y"
-      // ide jöhetnek majd a többi képek
-    ];
-    const img = document.getElementById("randomImage");
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    img.src = imageUrls[randomIndex];
-  </script>
+  <img src="https://chat.openai.com/mnt/data/0EECF6E0-5BBB-45EB-B500-F5B9CD31C77F.jpeg" alt="meglepi kép" />
 </body>
 </html>
