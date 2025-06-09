@@ -3,31 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Hiányzunk? 😄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
       font-family: sans-serif;
-      background-color: #f7f7f7;
-      text-align: center;
-      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
+      max-width: 90vw;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
     button {
       margin-top: 20px;
       padding: 10px 20px;
-      font-size: 18px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
       cursor: pointer;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <h1>Hiányzunk? 😄</h1>
-  <img id="randomImage" src="" alt="Kép töltődik..." />
-  <br>
+  <img id="randomImage" src="" alt="Töltés..." />
   <button onclick="showRandomImage()">Mutass másikat</button>
 
   <script>
@@ -45,7 +60,7 @@
       img.src = imageUrls[index];
     }
 
-    // első betöltéskor is jelenjen meg kép
+    // automatikusan betölt egy képet
     showRandomImage();
   </script>
 </body>
