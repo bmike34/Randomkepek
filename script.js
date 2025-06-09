@@ -16,7 +16,7 @@ fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+
 
     const randomIndex = Math.floor(Math.random() * files.length);
     const fileId = files[randomIndex].id;
-    const imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+    const imageUrl = `https://drive.usercontent.google.com/download?id=${fileId}&export=view`;
 
     console.log("Kép URL:", imageUrl);
 
