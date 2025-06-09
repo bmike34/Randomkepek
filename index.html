@@ -1,67 +1,36 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Hiányzunk? 😄</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baráti meglepetés</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      font-family: sans-serif;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
+      background: #111;
     }
     img {
-      max-width: 90vw;
-      max-height: 70vh;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    h1 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <h1>Hiányzunk? 😄</h1>
-  <img id="randomImage" src="" alt="Töltés..." />
-  <button onclick="showRandomImage()">Mutass másikat</button>
-
+  <img id="randomImage" src="" alt="meglepi kép" />
   <script>
     const imageUrls = [
-      "https://i.imgur.com/6Lgyt3g.jpg",
-      "https://i.imgur.com/jFFcm6M.jpg",
-      "https://i.imgur.com/Hc2AI1H.jpg",
-      "https://i.imgur.com/Z57pMCz.jpg",
-      "https://i.imgur.com/kMEldu4.jpg"
+      "https://drive.google.com/uc?id=15L4OBaSW03Nx2ipPBVGoUbtuVNT_A02y"
+      // ide jöhetnek majd a többi képek
     ];
-
-    function showRandomImage() {
-      const img = document.getElementById("randomImage");
-      const index = Math.floor(Math.random() * imageUrls.length);
-      img.src = imageUrls[index];
-    }
-
-    // automatikusan betölt egy képet
-    showRandomImage();
+    const img = document.getElementById("randomImage");
+    const randomIndex = Math.floor(Math.random() * imageUrls.length);
+    img.src = imageUrls[randomIndex];
   </script>
 </body>
 </html>
