@@ -35,9 +35,13 @@
     const apiKey = "AIzaSyBjRektb6rKE1hjaAleN03217YVU3RjViQ";
 
     fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+(mimeType='image/jpeg'+or+mimeType='image/png')&key=${apiKey}`)
-      .then(response => response.json())
-      .then(data => {
-        const files = data.files;
+  .then(response => {
+    console.log("Fetch response status:", response.status);  // <- ez kiírja, hogy sikerült-e a kérés
+    return response.json();
+  })
+  .then(data => {
+    console.log("API válasz:", data);  // <- ez kiírja, hogy mit kaptunk vissza
+    const files = data.files;
         if (!files || files.length === 0) {
           document.getElementById("loading").textContent = "Nincsenek kompatibilis képek ebben a mappában.";
           return;
