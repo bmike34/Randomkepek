@@ -41,6 +41,8 @@
   })
   .then(data => {
     console.log("API válasz:", data);  // <- ez kiírja, hogy mit kaptunk vissza
+    console.log("Első fájl MIME-típusa:", data.files[0]?.mimeType);
+    console.log("Első fájl neve:", data.files[0]?.name);
     const files = data.files;
         if (!files || files.length === 0) {
           document.getElementById("loading").textContent = "Nincsenek kompatibilis képek ebben a mappában.";
